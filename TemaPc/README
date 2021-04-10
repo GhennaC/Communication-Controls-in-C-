@@ -1,0 +1,22 @@
+			--Tema Protocoale de comunicatii-- Caraman Ghenadie
+In cadrul temei s-a implementat:
+-parsarea tabelei de rutare si arp(statica)->printr-o citire obisnuita din fisier;
+-forwarding-ul care consta din primirea unui pachet,initializarea head-erelor ip,icmp si eth,verificarea cu ajutorul ip_checksum a checksum-ului din ip_hdr,verificarea ttl si
+existenta unei rute pentru ip destinatie primit in pachet.Daca checksum-ul este diferit
+de 0 ,ttl>1 si exista o ruta -> se recalculeaza checksum-ul,se decrementeaza ttl-ul si se trimite pachetul mai departe spre interfata gasita a 
+celei mai bune rute,modificand mac-ul din eth  cu cel coraspunzator ipdest din arp.
+-in cazul in care ttl <= 1 sau nu este gasita o ruta,am ales sa creez un pachet nou initializand headerele in init_packet si apoi modificandu-le in init_hdrs, se inverseaza adresa destinatie cu  sursa si mac-ul sursa cu mac-ul destinatie si se atribuie un tip anume de mesaj pentru fiecare conditie(ttl->11/DestUnr->3)pentru a redirectiona inapoi mesajul.
+-in cazul in care headerul icmp din pachet este de tip ICMP_ECHO,verificam daca adresa destinatie este una din adresele interfetelor,daca da , modificam headerele pachetului
+corespunzator ,din nou utilizand init_hdrs.
+
+
+
+Feedback: 
+	Personal pentru mine a fost o tema destul de dificila,per general ca materia
+este destul de ok ,multisoara dar ,este ok ca concept, insa cand ajungem la laborator sau
+ca de exemplu la aceasta tema este destul de greu de implementat,ca de exemplu daca nu am
+fi facut la laborator router si icmp ,cred ca nu as fi facut mai nimic,pentru ca pe internet nu prea gasesti cod ,in general doar concept...
+	Ceea ce am simtit nevoia sa vad in schelet sau in enunt ,o explicatie mai detaliata a cam ce ar trebui noi sa implementam,facem sau sa avem un plan dupa care sa ne ghidam,adica niste pasi dupa care putem sa mergem.
+	Va multumesc si sper ca nu ati luat-o cu rau. : )
+
+
