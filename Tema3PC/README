@@ -1,0 +1,13 @@
+			Tema3 -- Protocoale de comunicatii--
+					Student:Caraman Ghenadie
+Scopul temei a fost implementarea unui client in C/C++ care  sa interactioneze cu un REST API.In rezolvarea temei am folosit arhiva de parson primita ca sugestie pentru tema,aceasta fiind folosita formarea mesajelor trimise catre server in functie de comanda primita de la tastatura.Preluat rezolvarea unor fisiere din laboratul 10,ca de exemplu requests.c ,care a fost modificat. In client.c s-a facut un while infinit in care au fost abordate toate comenzile care puteau fi primite conform enuntului temei,in caz ca primim o comanda ce nu a fost prevazuta se afiseaza "wrong command,please enter another command",pentru comenzile prevazute in enunt am facut : 
+1. register : se citeste username-ul si password-ul formand cu json obiectul de tip apoi trimitandu-l prin functia din requests.c compute_post_request se formeaza mesajul care apoi este trimis la server si primind raspunsul,in fucntie de ce primim,afisam "succes nume account created"/"fail try again".
+2. login : primind usernameul si passwordul de la tastatura se formeaza mesajul si primind raspuns de la server ,daca este un log si pass valid,se salveaza cookie-ul si se afiseaza un mesaj de succes ,altfel se afiseaza"wrong login or password".
+3. enter_library : se formeaza mesajul impreuna cu cookie ul primit dupa login,altfel cu null ,se trimite la server,primind de la server raspuns daca raspunsul este de succes se salveaza token-ul ,altfel se afiseaza mesaj de esec.
+4. get_books : utilizand token-ul se formeaza mesaj,se trimite,se primeste raspuns de la server: in caz de succes se afiseaza lista de carti,altfel mesaj de esec.
+5. get_book : la fel ca si la book se form mesajul,dar primind raspuns de la get_book se afiseaza datele despre carte sau esec.
+6. add_book : se formeaza mesajul cu token,introducand toate datele  despre carte de la tastatura,se trimite , in caz de primire mesaj afirmativ se afiseaza succes id book, altfel eroare.
+7. delete_book : se sterge cartea cu id-ul introdus de la tastatura,daca exista cartea si token-ul este valid se afiseaza ca cartea a fost stearsa,altfel eroare.
+8.logout si exit : la logout se reseteaza token si cookie,iar la exit se da break din while si se inchide socketul.
+
+Feedback:A fost o tema interesanta, care nu a necesitata foarte mult timp, dar luand in considerare fluxul de informatie in aceasta perioada a fost foarte buna. Va multumesc.
