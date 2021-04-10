@@ -10,4 +10,3 @@ Scopul temei a fost implementarea unui client in C/C++ care  sa interactioneze c
 7. delete_book : se sterge cartea cu id-ul introdus de la tastatura,daca exista cartea si token-ul este valid se afiseaza ca cartea a fost stearsa,altfel eroare.
 8.logout si exit : la logout se reseteaza token si cookie,iar la exit se da break din while si se inchide socketul.
 
-Feedback:A fost o tema interesanta, care nu a necesitata foarte mult timp, dar luand in considerare fluxul de informatie in aceasta perioada a fost foarte buna. Va multumesc.
